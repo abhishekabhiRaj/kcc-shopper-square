@@ -171,21 +171,6 @@
 
 
 
-
-.LogoNew {
-    color: red;
-    letter-spacing: 3px;
-    margin: 0%;
-}
-
-.LogoNew h2 {
-    color: #FDD700;
-
-    margin: 0%;
-}
-
-.LogoNew span {
-    color: #000;
-    margin: 0%;
-    letter-spacing: 8px;
+.logo{
+    width: 140px;
 }

@@ -1,4 +1,5 @@
-import {Tooltip} from "react-bootstrap"
+import {Tooltip} from "react-bootstrap";
+import Logo from "../../image/logo.png";
 
 const compare = (props) => (
     <Tooltip id="button-tooltip" {...props}>
@@ -52,10 +53,7 @@ export const cartIcon = (
   );
   
   export const logo = (
-    <div className="LogoNew">
-        <h2>Shopper</h2>
-        <span>Square</span>
-    </div>
+    <img className="logo" src={Logo} />
   );
   
   

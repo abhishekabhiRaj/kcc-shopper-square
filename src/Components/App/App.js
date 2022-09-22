@@ -34,10 +34,12 @@ function App() {
   } else {
     return (
       <>
-        {/* <Switch> */}
-          {/* <Route exact path="/login" render={(props) => <Login setUser={setUser} />} /> */}
-          <Login setUser={setUser} />
-        {/* </Switch> */}
+        <Switch>
+          <Route exact path="/login" >
+              <Login setUser={setUser} />
+          </Route>
+          <Redirect to="/login" />
+        </Switch>
       </>
     );
   }
