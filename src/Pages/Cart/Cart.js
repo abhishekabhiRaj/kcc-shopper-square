@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { getCartList } from "../../all_feature/addCartSlice";
 import CartCards from "./CartCards";
 import {getAmount} from "../../all_feature/totalAmountSlice"
+import { NavLink } from "react-router-dom";
 
 function Cart() {
   const data = useSelector(getCartList);
@@ -23,7 +24,7 @@ function Cart() {
           <Col>  <h2 className="Cart-h3"> Cart </h2>  </Col>
         </Row>  {  data.map((val, id)=>  <CartCards props={val} key={id} />)   }  <Row>
           <Col>
-            <div className="totalPrice" style={{float:'right'}}>Your Total Purchase Amount =  <strong style={{color:'red'}} >${totalPurchaseAmount}</strong> </div>
+            <div className="totalPrice" style={{float:'right'}}>Your Total Purchase Amount =  <strong style={{color:'red'}} >${totalPurchaseAmount}</strong> <NavLink to="/contact" className="btn btn-success text-center">Proceed to buy</NavLink>  </div>
           </Col>
         </Row>
       </Container>

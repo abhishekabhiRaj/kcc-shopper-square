@@ -1,17 +1,21 @@
-import { React } from "react";
+import { React, useEffect } from "react";
 import "../../Pages/Home/Home";
 import {Container, Row, Col, Navbar, Nav, NavDropdown,OverlayTrigger, InputGroup, FormControl, Button} from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
 import Sidebar from "./Sidebar";
 import {cartIcon, userIcon, searchIcon, logo, shopDepartments, compare_cart , search, search2, showSearchBar, showSidebar, menuIcon} from './data'
-
+// cart counter 
+import { useSelector } from "react-redux";
+import { getCartList } from "../../all_feature/addCartSlice";
 
 
 
 
 // Header components ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function Header() {
+  // cart counter 
+  const cartItem = useSelector(getCartList);
   return (
     <>
       <div className="Header">
@@ -172,7 +176,7 @@ function Header() {
                           {" "}
                           {value.svg}{" "}
                           <span className={value.id2} id={value.id2}>
-                            0
+                            {cartItem&& cartItem.length}
                           </span>{" "}
                         </NavLink>
                       </OverlayTrigger>
@@ -235,9 +239,9 @@ function Header() {
                 <div className="mobile-header-right-user">{userIcon}</div>
                 <div className="mobile-header-right-cart">
                   {cartIcon}
-                  <span className="cart-item-no" id="cart-item-no">
-                    0
-                  </span>
+                  <NavLink to="/cart"  className="cart-item-no" id="cart-item-no">
+                    {cartItem&&cartItem.length}
+                  </NavLink>
                 </div>
               </section>
             </Col>

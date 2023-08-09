@@ -44,4 +44,10 @@
         background-color: black;
         color: white;
     }
+    .Cart-row {
+        padding-bottom: 24px;
+    }
+    .Cart-row .Cart-row-center img{
+        width: 50% !important;
+    }
 }
